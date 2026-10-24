@@ -27,9 +27,9 @@ body>div:first-of-type{overflow:visible!important;overflow-x:clip!important}
  /* everything after the hero sits above it */
  #top~*{position:relative;z-index:3}
  /* 2 wide grid: content fills the screen, no narrow column */
- section[style*="max-width:1240px"],footer[style*="max-width:1240px"]{max-width:1560px!important;padding-left:clamp(24px,4vw,72px)!important;padding-right:clamp(24px,4vw,72px)!important}
- section>div[style*="max-width:1240px"]{max-width:1560px!important}
- #top~* div[style*="max-width:1240px"]{max-width:1560px!important}
+ section[style*="max-width:1240px"],footer[style*="max-width:1240px"]{max-width:1760px!important;padding-left:clamp(24px,4vw,72px)!important;padding-right:clamp(24px,4vw,72px)!important}
+ section>div[style*="max-width:1240px"]{max-width:1760px!important}
+ #top~* div[style*="max-width:1240px"]{max-width:1760px!important}
  /* 5 bigger project names */
  article h3{font-size:clamp(40px,5vw,84px)!important;line-height:1!important}
  article>div:first-child{align-items:end!important}
@@ -46,7 +46,19 @@ body>div:first-of-type{overflow:visible!important;overflow-x:clip!important}
 /* 3 soft reveal on scroll */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
 .rv.in{opacity:1;transform:none}
-</style></head>
+</style><style id="hero-fix">
+#top header>a:first-child{display:none!important}
+#top header{justify-content:flex-end!important}
+@media (min-width:1000px){
+ #top>div:first-child>div:last-child{padding-bottom:clamp(64px,9vh,110px)!important}
+ #top>div:first-child>div:last-child>div{font-size:13px!important}
+ #top>div:nth-child(2){padding-left:max(clamp(24px,4vw,72px),calc((100vw - 1760px)/2 + clamp(24px,4vw,72px)))!important;padding-right:max(clamp(24px,4vw,72px),calc((100vw - 1760px)/2 + clamp(24px,4vw,72px)))!important;display:grid!important;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(24px,4vw,80px);align-items:end}
+ #top>div:nth-child(2)>div{margin-top:0!important;padding-bottom:12px}
+ #top~* div[style*="max-width:1240px"]{padding-left:clamp(24px,4vw,72px)!important;padding-right:clamp(24px,4vw,72px)!important}
+ #top>div:nth-child(2) h1{max-width:none!important;font-size:clamp(44px,5.4vw,100px)!important}
+}
+</style>
+</head>
 <body>
 
 <div style="width:100%;background:#FFF6EE;color:#14110F;font-family:'Archivo',system-ui,sans-serif;overflow-x:hidden">
@@ -69,7 +81,7 @@ body>div:first-of-type{overflow:visible!important;overflow-x:clip!important}
 </header>
 <div style="position:relative;z-index:2;padding:0 clamp(10px,2vw,36px) clamp(14px,1.8vw,28px)">
 <p style="font-family:'Archivo',sans-serif;font-weight:800;font-size:min(10.4vw,190px);line-height:0.86;letter-spacing:-0.05em;text-transform:uppercase;white-space:nowrap;color:#FFF6EE;margin:0">Virginia <span style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;letter-spacing:-0.01em">Lemes</span></p>
-<div style="display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between;margin-top:clamp(14px,1.8vw,26px);padding:0 clamp(6px,0.4vw,6px);font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#FFF6EE"><span>AI Creative Director</span><span>Dubai</span><span>Open to Creative Director roles</span></div>
+<div style="display:flex;flex-wrap:wrap;gap:6px 28px;justify-content:space-between;margin-top:clamp(14px,1.8vw,26px);padding:0 clamp(6px,0.4vw,6px);font-size:12px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:#FFF6EE"><span>AI Creative Director</span><span>Dubai</span><span>Open to Creative Director roles in the UAE</span></div>
 </div>
 </div>
 <div style="max-width:1240px;margin:0 auto;padding:clamp(36px,5vw,72px) 24px 0;box-sizing:border-box">
@@ -430,7 +442,7 @@ pick(0,false);
 <section id="contact" style="background:#E6D9C8;margin-top:clamp(96px,11vw,160px)">
 <div style="max-width:1240px;margin:0 auto;padding:clamp(72px,9vw,128px) 24px;box-sizing:border-box">
 <h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(41.4px,7.4vw,111px);line-height:0.95;letter-spacing:-0.005em;margin:0">Let's create.</h2>
-<p style="font-size:20px;line-height:1.55;color:#2A211C;margin:28px 0 0;max-width:560px">Open to Creative Director and Head of Creative roles in the UAE and internationally.</p>
+<p style="font-size:20px;line-height:1.55;color:#2A211C;margin:28px 0 0;max-width:560px">Open to Creative Director and Head of Creative roles in the UAE.</p>
 <div style="margin-top:56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;border-top:1px solid #BDA98E;padding-top:32px">
 <div>
 <p style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:#3A302A;margin:0 0 8px">Email</p>
