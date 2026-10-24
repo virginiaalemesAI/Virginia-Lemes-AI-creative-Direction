@@ -16,7 +16,37 @@ a{color:#84391E}a:hover{color:#14110F}
 </style>
 
 <style>html{scroll-behavior:smooth}</style>
-</head>
+<style id="proto">
+body>div:first-of-type{overflow:visible!important;overflow-x:clip!important}
+
+@media (min-width:1000px){
+ /* 1 full-screen hero that stays put while the cream page slides over it */
+ #top>div:first-child{position:sticky!important;top:0;height:100vh!important;min-height:620px}
+ #top>div:nth-child(2){position:relative;z-index:3;background:#FFF6EE;max-width:none!important;margin:0!important;padding:clamp(56px,7vw,110px) clamp(24px,4vw,72px) clamp(56px,7vw,110px)!important;border-radius:28px 28px 0 0;margin-top:-28px!important}
+ #top>div:nth-child(2) h1{max-width:1300px!important;font-size:clamp(48px,6.4vw,118px)!important}
+ /* everything after the hero sits above it */
+ #top~*{position:relative;z-index:3}
+ /* 2 wide grid: content fills the screen, no narrow column */
+ section[style*="max-width:1240px"],footer[style*="max-width:1240px"]{max-width:1560px!important;padding-left:clamp(24px,4vw,72px)!important;padding-right:clamp(24px,4vw,72px)!important}
+ section>div[style*="max-width:1240px"]{max-width:1560px!important}
+ #top~* div[style*="max-width:1240px"]{max-width:1560px!important}
+ /* 5 bigger project names */
+ article h3{font-size:clamp(40px,5vw,84px)!important;line-height:1!important}
+ article>div:first-child{align-items:end!important}
+ article{margin-top:clamp(100px,10vw,180px)!important}
+}
+/* 4 thin sticky nav that appears after the hero */
+#sn{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,3vw,48px);height:56px;background:rgba(255,246,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid #E3D3BE;transform:translateY(-100%);transition:transform .35s ease;font-family:'Archivo',sans-serif}
+#sn.on{transform:none}
+#sn a{color:#14110F;text-decoration:none;font-size:14px}
+#sn nav{display:flex;gap:28px;align-items:center}
+#sn .b{background:#14110F;color:#FFF6EE;padding:9px 18px;border-radius:999px}
+#sn .w{font-weight:800;letter-spacing:.02em;text-transform:uppercase}
+@media (max-width:700px){#sn nav a:not(.b){display:none}}
+/* 3 soft reveal on scroll */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+.rv.in{opacity:1;transform:none}
+</style></head>
 <body>
 
 <div style="width:100%;background:#FFF6EE;color:#14110F;font-family:'Archivo',system-ui,sans-serif;overflow-x:hidden">
@@ -24,12 +54,13 @@ a{color:#84391E}a:hover{color:#14110F}
 <!-- HERO with nav on top of the image -->
 <section id="top">
 <div style="position:relative;overflow:hidden;background:#14110F;height:clamp(560px,52vw,860px);display:flex;flex-direction:column;justify-content:space-between">
-<img src="images/61a1eba7f4a660673b5246b18bd08209.jpg" alt="AI-generated campaign portrait: a model in yellow sunglasses and a golden crochet cardigan under a strip light" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%">
+<img src="images/hero_new.jpg" alt="AI-generated campaign portrait: a laughing model with hands on her cheeks, in a white crochet top against a colourful woven rug" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%">
 <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,17,15,0.55) 0%,rgba(20,17,15,0) 26%,rgba(20,17,15,0.25) 55%,rgba(20,17,15,0.82) 100%)"></div>
 <header style="position:relative;z-index:2;padding:clamp(16px,2vw,28px) clamp(16px,2.4vw,40px);display:flex;flex-wrap:wrap;gap:12px 32px;align-items:center;justify-content:space-between">
 <a href="#top" style="font-family:'Archivo',sans-serif;font-size:16px;font-weight:800;letter-spacing:0.02em;text-transform:uppercase;color:#FFF6EE;text-decoration:none">Virginia Lemes</a>
 <nav style="display:flex;flex-wrap:wrap;gap:4px 28px;align-items:center;font-size:15px">
 <a href="#work" style="color:#FFF6EE;text-decoration:none;padding:10px 0">Work</a>
+<a href="#motion" style="color:#FFF6EE;text-decoration:none;padding:10px 0">Video</a>
 <a href="#clone" style="color:#FFF6EE;text-decoration:none;padding:10px 0">AI clone</a>
 <a href="#process" style="color:#FFF6EE;text-decoration:none;padding:10px 0">Process</a>
 <a href="#about" style="color:#FFF6EE;text-decoration:none;padding:10px 0">About</a>
@@ -201,6 +232,34 @@ a{color:#84391E}a:hover{color:#14110F}
 </div>
 </article>
 </section>
+
+<!-- MOTION: add new videos by adding one line to the VIDEOS list below -->
+<section id="motion" style="max-width:1240px;margin:0 auto;padding:clamp(96px,11vw,160px) 24px 0;box-sizing:border-box">
+<p style="font-size:13px;letter-spacing:0.18em;text-transform:uppercase;font-weight:500;color:#84391E;margin:0 0 16px">In motion</p>
+<h2 style="font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(29.6px,4vw,56.2px);line-height:1.04;letter-spacing:-0.005em;margin:0;max-width:900px">Video and AI clone work</h2>
+<div id="vp" style="margin-top:48px;display:grid;grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);gap:clamp(20px,3vw,48px);align-items:start">
+<div><div style="aspect-ratio:16/9;background:#14110F;border-radius:4px;overflow:hidden"><video id="vmain" controls playsinline preload="metadata" style="display:block;width:100%;height:100%;object-fit:contain;background:#14110F"></video></div>
+<p id="vt" style="font-size:13px;letter-spacing:0.14em;text-transform:uppercase;font-weight:600;color:#84391E;margin:16px 0 0"></p><p id="vn" style="font-size:16px;color:#3A302A;margin:6px 0 0"></p></div>
+<div id="vlist" style="border-top:1px solid #D9C9B4"></div>
+</div>
+<style>#vlist button{all:unset;box-sizing:border-box;display:flex;gap:16px;align-items:center;width:100%;padding:14px 8px;border-bottom:1px solid #D9C9B4;cursor:pointer;transition:background .2s}#vlist button:hover{background:#F6E9DB}#vlist button.on{background:#EFE2D2}#vlist img{width:64px;height:64px;object-fit:cover;border-radius:3px;flex:none}#vlist b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:24px;line-height:1.1}#vlist span{display:block;font-size:14px;color:#3A302A;margin-top:4px}#vlist i{font-style:normal;font-size:12px;letter-spacing:.14em;color:#84391E;width:22px;flex:none}@media (max-width:900px){#vp{grid-template-columns:1fr!important}}</style>
+</section>
+<script>
+/* ADD A VIDEO = ADD ONE LINE. ratio: "4/5" portrait, "16/9" landscape, "9/16" vertical */
+var VIDEOS=[
+ {file:"images/puffy.mp4",poster:"images/puffy.jpg",ratio:"16/9",title:"Puffy Cloud, Reimagined",note:"Speculative mattress campaign film"},
+ {file:"images/worldcup_final.mp4",poster:"images/worldcup_final.jpg",ratio:"9/16",title:"La Romana × Panini",note:"World Cup gelato activation, in motion"},
+ {file:"images/d8576706bea743c047fdc6db6587dd75.mp4",poster:"images/ed55e2294e2a86c51716930e176e4b22.jpg",ratio:"4/5",title:"Real estate reel",note:"Presented by my AI clone, in four languages"},
+ {file:"images/model.mp4",poster:"images/model.jpg",ratio:"16/9",title:"Model in motion",note:"Studio fashion movement, AI-generated"},
+ {file:"images/hf0831.mp4",poster:"images/hf0831.jpg",ratio:"4/3",title:"Felted creatures picnic",note:"Tazij soda concept, animated"}
+ // ,{file:"images/NEW-VIDEO.mp4",poster:"images/NEW-POSTER.jpg",ratio:"16/9",title:"Title",note:"One line about it"}
+];
+var vm=document.getElementById('vmain');
+function pick(i,play){var v=VIDEOS[i];vm.poster=v.poster;vm.src=v.file;document.getElementById('vt').textContent=v.title;document.getElementById('vn').textContent=v.note;[].forEach.call(document.querySelectorAll('#vlist button'),function(b,j){b.classList.toggle('on',j===i)});if(play){vm.play()}}
+document.getElementById('vlist').innerHTML=VIDEOS.map(function(v,i){return '<button data-i="'+i+'"><i>0'+(i+1)+'</i><img src="'+v.poster+'" alt=""><div><b>'+v.title+'</b><span>'+v.note+'</span></div></button>'}).join('');
+document.getElementById('vlist').addEventListener('click',function(e){var b=e.target.closest('button');if(b)pick(+b.dataset.i,true)});
+pick(0,false);
+</script>
 
 <!-- CRAFT -->
 <section style="max-width:1240px;margin:0 auto;padding:clamp(96px,11vw,160px) 24px 0;box-sizing:border-box">
@@ -400,5 +459,17 @@ a{color:#84391E}a:hover{color:#14110F}
 
 </div>
 
-</body>
+<div id="sn"><a class="w" href="#top">Virginia Lemes</a><nav><a href="#work">Work</a><a href="#motion">Video</a><a href="#clone">AI clone</a><a href="#process">Process</a><a href="#about">About</a><a class="b" href="mailto:me@virginialemes.com">Get in touch</a></nav></div>
+<script>
+(function(){
+ var sn=document.getElementById('sn');
+ function t(){sn.classList.toggle('on',window.scrollY>window.innerHeight*0.85)}
+ addEventListener('scroll',t,{passive:true});t();
+ var els=document.querySelectorAll('article>div,article>p,#top~section>h2,#top~section>p');
+ if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){e.classList.add('rv');io.observe(e)});
+ }
+})();
+</script></body>
 </html>
